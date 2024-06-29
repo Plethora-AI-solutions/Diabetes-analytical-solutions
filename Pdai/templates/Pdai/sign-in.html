@@ -1,0 +1,214 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Sign in</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="stylesheet" href="/static/css/sign_in.css?{% now "U" %}"/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
+
+
+
+    </head>
+    <body>
+
+        <center>
+
+
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class=" alert {{ message.tags }}" role="alert">
+                    <strong>{% if message.tags %} {% endif %} 
+                        {{ message }}</strong> 
+                        {% endfor %}
+            </div>
+        {% endif %}
+
+
+
+        
+        </center>
+
+
+
+        <div>
+
+
+            <h1>
+                <b> 
+                <strong> | </strong> 
+                <div class='t1'>
+
+                    <a href="http://127.0.0.1:8000/">
+
+                        Diabetes diagnosis system
+
+
+                    </a>
+
+                </div>
+                    
+                </b>
+                    
+            </h1>
+
+
+           
+
+        </div>
+
+        <div class = 'h1-container'>
+            <center>
+                <h2> 
+                    <b>Sign in</b>
+                </h2>
+            </center>  
+            </div>
+
+        <form action='sign_in', method='POST'>
+        {% csrf_token %}
+    
+        
+            <div class='email-container'>
+                <center>
+                <input type="email", name="email1", id="email1", 
+                placeholder="Enter your email *" required>
+                <br>
+                </center>
+            </div>
+            
+
+            <div class='pass-container'>
+                <center>
+                <input type="password", name="pass1", 
+                id="pass1", 
+                placeholder="Enter your password *" requiredb>
+                </center>
+            </div>
+
+            <div class='full-buttons-container' >
+
+                <div class= 'button'>
+                    <center>
+                    <a  class = 'Button_back' href="{% url 'home' %}"> 
+                        <button type="button"  class="btn btn-primary" style="--bs-btn-padding-y: 15px; --bs-btn-padding-x: 90px; --bs-btn-font-size: 19px;"> 
+                        
+                            Back 
+                            
+                        </button>
+                    </a>
+                    </center>
+                </div>
+
+
+                <div class='button'>
+                    <center>
+                    <button type="reset"  class="btn btn-primary"  style="--bs-btn-padding-y: 15px; --bs-btn-padding-x: 90px; --bs-btn-font-size: 19px;">
+                        Clear
+                    </button>
+                    </center>
+                </div>
+
+
+                <div class='button'>
+                    <center>
+                        <button type="submit"  class="btn btn-primary"
+                        style="--bs-btn-padding-y: 15px; --bs-btn-padding-x: 90px; --bs-btn-font-size: 19px;"  > 
+                        
+                                Login 
+                            
+                        </button>
+                    </center>
+                </div>
+
+            </div>
+            <div  class='F-link'> 
+            <center>
+                <p> 
+                    Forgot password? 
+                    <a href="{% url 'submit_pass' %}">
+                        <u>  
+                            <b>Reset now 
+
+                            </b> 
+                        </u>
+                    </a>
+                </p>
+            </center>
+        </form>
+
+
+
+            
+            <div class='footer'>
+
+                <div class='copyright-site'>
+
+                    <a href=" http://127.0.0.1:8000/">
+                         Diabetes system
+                    </a>   
+                    <img class='f-img'width='30px' height = '22px'src="{% static 'copyright.jpg' %}" alt="copyright symbol">  
+
+                </div>
+
+                <div class = 'footer-div'>
+                    <div class='links-f'>
+
+                        <p>
+                            <a 
+                                href="{% url 'about'%}"> About 
+                            </a>
+                        </p>
+
+                        <p>
+                            <a href="https://www.cdc.gov/diabetes/basics/symptoms.html" target="_blank"> Centre for disease control</a>
+                        </p>
+
+                        <p>
+                            <a href=" https://www.diabetes.org.uk/how_we_help/local_support_groups/peer-support" target="_blank"> Peer groups support </a>
+                        </p>
+
+                        <p>
+                            <a href="https://healthmatch.io/high-blood-pressure/how-does-diabetes-cause-hypertension#can-high-blood-pressure-cause-diabetes"  target="_blank"> Daibetes and hypertension </a>
+                        </p>
+
+                    </div>
+                    <div class='links-f'>
+
+
+                        <p>
+                            <a href="https://www.who.int/news-room/fact-sheets/detail/diabetes#:~:text=Diabetes%20is%20a%20chronic%20disease,hormone%20that%20regulates%20blood%20glucose."  target="_blank"> WHO - daibetes fact sheet </a>
+                        </p>
+
+                        <p>
+                            <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-england-additional-analyses/ethnicity-and-health-2011-2019-experimental-statistics/overweight-and-obesity"  target="_blank"> NHS - diversity and daibetes </a>
+                        </p>
+
+                
+                        <p>
+                            <a href="{% url 'links'%}" target="_blank"> Useful links and resources </a>
+                        </p>
+
+
+                    </div>
+                </div>
+
+            
+
+            </div>
+       </div>
+
+
+
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+            <script src={% static 'rf-form.js' %}></script>
+
+          
+    </body onload='alertShow()'>
+</html>

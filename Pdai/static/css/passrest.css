@@ -1,0 +1,542 @@
+body {
+
+    background-color: rgb(236, 244, 244);
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+h1 {
+    text-align: left;
+    width: 100%;
+    top: 0;
+    position:relative;
+    text-transform: uppercase; 
+    background-color: rgb(27, 4, 205);
+    height: 100px;
+    padding: 10px;
+    padding-left: 12px;
+    color: rgb(217, 217, 218);
+    font-size: 30px;
+    
+  }
+
+
+
+h1 strong {
+
+    font-size: 65px;
+    width: 30px;
+    margin-right: -10px;
+    margin-top: 178px;
+
+}
+
+h1 a {
+    text-decoration: none;
+    color: rgb(217, 217, 218);
+
+}
+
+h1 a:hover {
+
+    color: rgb(114, 248, 114);
+}
+
+.t1 {
+
+    margin-top: -51px;
+    margin-left: 21px;
+}
+
+h2 {
+
+    margin-bottom: -20px;
+    margin-left: 27px;
+    
+    
+}
+
+h2 b {
+    font-size: 44px;
+
+}
+
+
+#id_email {
+
+    
+    border-color: black;
+    border-width: 3px;    
+    border-radius: 8px;  
+    
+}
+
+
+input{
+    display:inline-block;
+    width: 60%;
+    height: 50px;
+    margin-left: 24%;
+
+}
+
+
+
+
+label {
+
+    color: rgb(7, 7, 7);
+    margin-left: 48% !important;
+    font-size:40px !important;
+  
+}
+
+
+
+button {
+    width: 40%;
+    height: 48px;
+    margin: 12px 0px;
+    margin-top: 16px!important;
+    margin-left: 10%;
+
+}
+
+
+.btn:hover {
+
+    color: rgb(141, 228, 10);
+    box-shadow: 0px 0px 5px 5px rgb(206, 209, 206);
+
+
+}
+
+
+@media (max-width:700px) {
+
+
+    h1 {font-size: 21px;
+        width: 100%;
+    }
+
+    
+
+    h2 { margin-top: 40px;
+         margin-bottom: 35px;
+         
+    
+    }
+
+    h2 b {
+
+        font-size: 39px;
+    }
+
+    label {
+
+        margin-bottom: 10px;
+        align-items: center;
+        margin-left: 40% !important;
+        font-size: 30px !important;
+    }
+
+    #id_email {
+        width: 80%;
+        text-align: center;
+        margin-left: 10%;
+    }
+
+    .btn {
+        padding: 7px 10px;
+        font-size: 21px;
+        width: 240px;
+        margin-left: 6px;
+        margin-top: 20px;
+    }
+
+    .copyright-site a {
+
+        font-size: 13px !important;
+        padding-top: 25px !important;
+    }
+
+
+    .f-img {
+
+        margin-top: 15px !important;
+    }
+
+}
+
+
+@media (max-width:380px) {
+
+    h2 {
+
+        margin-top: 10px !important;
+        margin-bottom: 10px;
+    }
+
+    h2 b {
+        font-size: 31px!important;
+
+    }
+
+
+    label {
+
+        font-size: 26px !important;
+    }
+
+
+    input {
+
+        margin-bottom: 20px;
+    }
+
+
+    .btn {
+
+        width: 190px !important;
+        height: 45px !important;
+        padding: 7px 10px;
+
+
+    }
+
+
+    .copyright-site a {
+
+        font-size: 10px !important;
+        padding-top: 32px !important;
+    }
+
+
+    .f-img {
+
+        margin-top: 28px;
+    }
+
+
+
+
+
+}
+
+
+
+@media (700px <= width <= 900px) {
+
+
+    h2 {
+
+        margin-top: 180px;
+    }
+
+    h2 strong {
+
+        font-size: 38px;
+    }
+
+    .form-cont {
+        margin-top: 40px;
+    }
+
+    
+    .Login-link {
+
+        position: relative;
+        margin-top: 70px;
+        text-align: center;
+    }  
+
+    label {
+
+        margin-left: 45%;
+        margin-bottom: 10px;
+    }
+
+
+    #id_email {
+        width: 80%;
+        margin-left: 80px;
+    }
+   
+}
+
+
+
+.footer {
+
+    border-style: solid;
+    border-color: rgb(227, 230, 230);
+    width: 100%;
+    background-color: rgb(13, 2, 101); 
+    bottom: 0;
+    position: static;
+}
+
+
+.copyright-site {
+
+    padding-top: 6px;
+    margin-right: 1px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    max-width: 100%;
+   
+
+}
+
+
+.copyright-site a {
+
+    color: grey;
+    margin-right: 3px;
+    padding-top: 34px!important;
+}
+
+.f-img {
+
+    margin-top: 28px !important;
+}
+
+
+.footer-div {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 6px;
+    margin-left: 3px;
+    margin-top: 6px;
+}
+
+.links-f {
+
+    width: 50%;
+    height: 100%;
+    margin-top: 7px;
+    margin-left: 6px;
+    line-height: 1.0;
+    text-decoration: none;
+}
+
+.links-f a {
+    text-decoration: none;
+    color: rgb(226, 223, 223);
+}
+
+
+    
+@media (max-width:700px) {
+
+
+    .copyright-site a {
+
+       
+        padding-bottom:1px;
+        
+    
+    }
+
+    .footer {
+         bottom: 0;
+         position:fixed;
+
+    }
+
+    .info li {
+
+        font-size: 17px;
+
+
+    }
+
+    .wholink {
+
+        font-size: 16px;
+    }
+
+    .links-f {
+        font-size:12px;
+        margin-top: 2;
+        line-height: .5;
+        margin-left: 8px;
+    }
+
+    .footer-div {
+        width: 90%;}
+
+    .copyright-site a {
+        font-size: 12px;
+    }
+   
+ }
+
+
+ @media (max-width:380px) {
+
+
+    h2 {
+        margin-top: 90px;
+    }
+
+    h2 strong { 
+        font-size: 21px;
+    }
+
+    .form-cont {
+ 
+        margin-top: -35px;
+
+    }
+
+
+    .form-cont input {
+        max-width: 80%;
+        height: 33px;
+    }
+
+    .wholink {
+
+        font-size: 14px;
+    }
+
+    .btn {
+
+        height: 35px;
+        width: 160px;
+        margin-top: -5px;
+    }
+
+
+    .links-f {
+
+        font-size: 9px;
+    }
+
+    .copyright-site a {
+
+        font-size: 10px;
+        padding-top: 22px;
+    }
+
+    .copyright-site {
+        right: 0;
+    }
+
+    .f-img {
+
+        margin-top: 34px;
+    }
+
+
+ }
+
+
+
+
+
+ @media (700px <= width <= 900px) {
+
+
+    h2 {
+
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    label {
+
+        margin-left: 43% !important;
+
+    }
+
+
+    .btn {
+
+        width: 490px !important;
+        height:55px !important;
+        margin-left: 6px;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+   
+
+ 
+
+    .footer {
+
+        bottom: 0;
+        position: fixed;
+    }
+
+    
+
+}
+
+
+
+@media (max-width:3900px) {
+
+    label {
+        margin-left: 48%;
+        font-size: 67px;
+        margin-bottom: 16px;
+        margin-top: 30px;
+    }
+
+    h2 {
+
+        font-size: 78px;
+    }
+
+    .btn {
+
+        margin-top: 50px;
+    }
+
+    .footer {
+        bottom: 0;
+        position:fixed;
+
+   }
+
+   .f-img {
+    margin-top: 34px!important;
+   }
+
+  
+
+}
+
+
+@media (min-width:1281px) {
+
+    button {
+
+        margin-top: 43px!important;
+        width: 47%;
+        padding: 10px 2px;
+        height: 54px;
+    }
+
+    .btn{
+        font-size: 23px;
+       
+    }
+}
+
+

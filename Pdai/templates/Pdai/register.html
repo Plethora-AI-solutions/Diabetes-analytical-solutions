@@ -1,0 +1,223 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Register</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="stylesheet" href="/static/css/register.css?{% now "U" %}"/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+
+        {% load static %}
+
+
+     
+
+            <header> 
+                <center>
+                    <h1>
+                        <b> 
+                        <strong> | </strong> 
+                        <div class='t1'>
+        
+                            <a href="http://127.0.0.1:8000/">
+                                
+                                Diabetes diagnosis system
+                            </a>
+        
+                        </div>
+                         
+                        </b>
+                          
+                    </h1>
+                </center> 
+            </header>
+
+
+                <fieldset>
+                    {{form}}
+                </fieldset>
+
+
+               
+
+           
+
+             
+
+                    <div class='H2-element'>
+                        <h2>
+                            <center>
+                                <strong>
+                                    Register your account
+                                </strong>
+                            </center>
+                        </h2>
+
+                    </div>
+
+                    <div class='error-messages' id='error-messages' >
+
+
+                        <span id='fname-error'></span>
+                        <span id= 'sname-error'></span>
+                        <span id= 'pass-error'></span>
+                        <span id= 'pass-error'></span>
+
+
+                    
+                    </div>
+
+
+               
+
+
+
+                <div class = 'form-cont'>
+
+                    <form id='formm', action='', method="POST">
+
+                        {% csrf_token %}
+
+
+                    
+                        <center>
+                            <div class='input-form'>
+                                <input
+                                    type="text",  name="fname", id="fname", placeholder="Enter your name *" required>
+                            </div>
+
+
+                            <div class='input-form'>
+                                <input type="text", name="sname", id="sname", placeholder="Enter your surname *" required>
+                            </div>
+
+                            <div class='input-form'>
+                                <input type="email", name="email", id="email", placeholder="Enter your email *" required>
+                            <div>
+
+                            <div class='input-form'>
+                                <input type="password" name="pass1" id="pass1", placeholder="Enter your password *" required>
+                            </div>
+
+
+                            <div class='input-form'>
+                                <input type="password"
+                                    name="pass2" id="pass2", placeholder="Confirm your password *" required>
+                            </div>
+
+                    </form >
+
+                </div>
+                    
+
+                </div class= 'button_con'>
+
+                    <div class='buttons'>
+                        <div class="d-grid gap-2">
+                            <center>
+                        
+
+                            <button id= 'clear-content' class="btn btn-primary" type="reset">
+                                Clear
+                            </button>
+
+                            <button  
+                            type= 'submit' id='regis-submit' class="btn btn-primary" type="button">Register
+                            </button>
+                            </center>
+                        </div>
+                    </div>
+                
+                    <div  class='Login-link'> 
+                        <center>
+                            <p> 
+                                Have an account? 
+                                <a href="{% url 'sign_in' %}">
+                                    <u>  
+                                        <b>Login 
+        
+                                        </b> 
+                                    </u>
+                                </a>
+                            </p>
+                        </center>
+                    </div>
+                </div>    
+
+
+
+          
+        <div class='footer'>
+
+            <div class='copyright-site'>
+
+                <a href=" http://127.0.0.1:8000/">
+                     Diabetes system
+                </a>   
+                <img class='f-img'width='30px' height = '22px'src="{% static 'copyright.jpg' %}" alt="copyright symbol">  
+
+            </div>
+
+            <div class = 'footer-div'>
+                <div class='links-f'>
+
+                    <p>
+                        <a 
+                            href="{% url 'about'%}"> About 
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="https://www.cdc.gov/diabetes/basics/symptoms.html" target="_blank"> Centre for disease control</a>
+                    </p>
+
+                    <p>
+                        <a href=" https://www.diabetes.org.uk/how_we_help/local_support_groups/peer-support" target="_blank"> Peer groups support </a>
+                    </p>
+
+                    <p>
+                        <a href="https://healthmatch.io/high-blood-pressure/how-does-diabetes-cause-hypertension#can-high-blood-pressure-cause-diabetes"  target="_blank"> Daibetes and hypertension </a>
+                    </p>
+
+                </div>
+                <div class='links-f'>
+
+
+                    <p>
+                        <a href="https://www.who.int/news-room/fact-sheets/detail/diabetes#:~:text=Diabetes%20is%20a%20chronic%20disease,hormone%20that%20regulates%20blood%20glucose."  target="_blank"> WHO - daibetes fact sheet </a>
+                    </p>
+
+                    <p>
+                        <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-england-additional-analyses/ethnicity-and-health-2011-2019-experimental-statistics/overweight-and-obesity"  target="_blank"> NHS - diversity and daibetes </a>
+                    </p>
+
+            
+                    <p>
+                        <a href="{% url 'links'%}" target="_blank"> Useful links and resources </a>
+                    </p>
+
+
+                </div>
+            </div>
+
+        
+
+        </div>
+   </div>
+
+       
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <script src="" async defer></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"> </script>
+
+        <script src={% static "register.js" %}></script>
+
+    </body>
+</html>

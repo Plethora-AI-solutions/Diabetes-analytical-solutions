@@ -1,0 +1,647 @@
+
+body html {
+    background-color: rgb(238, 244, 244);
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    width: 100vw;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+h1 {
+    text-align: left;
+    margin-top: -90px;;
+    position:relative;
+    top: 90px;
+    text-transform: uppercase; 
+    background-color: rgb(27, 4, 205);
+    height: 100%;
+    width: 100%;
+    text-align: left;
+    padding-bottom: 33px;
+    padding-top: 12px;
+    padding-left: 12px;
+    color: rgb(217, 217, 218);
+    font-size: 30px;
+    
+  }
+
+
+  h1 strong{
+
+    font-size: 67px;
+    margin-left: 5px;
+
+}
+
+
+h1 a {
+    text-decoration: none;
+    color: rgb(217, 217, 218);
+
+}
+
+.error-messages {
+
+    max-width: 29%;
+    text-align: center;
+    margin-left: 35%;
+    border-radius: 8px;
+    padding: 4px;
+    margin-top: 15px!important;
+
+    
+}
+
+
+.error-messages span {
+
+    color: rgb(8, 8, 8);
+    font-weight: bold;
+
+    
+}
+
+
+
+@media (max-width:700px) {
+
+    .error-messages {
+
+        max-width: 70%!important;
+        margin-left: 16%;
+        margin-bottom: -45px!important;
+    }
+
+
+   .error-messages span {
+
+    font-size: 13px;
+   }
+}
+
+
+
+@media (700px <= width <= 900px) {
+
+    .error-messages {
+
+        max-width: 45%;
+        margin-left: 28%;
+        margin-bottom: -50px!important;
+    }
+
+    .error-messages span {
+
+        font-size: 15px!important;
+    }
+}
+
+
+
+@media (min-width:1281px) {
+
+
+    .error-messages {
+
+        max-width: 23%;
+        margin-left: 38%;
+    }
+
+    .error-messages span {
+
+        font-size: 18px;
+    };
+}
+
+
+
+
+.t1 {
+
+    margin-top: -51px;
+    margin-left: 31px;
+}
+
+
+@media (max-width:700px) {
+    h1{
+        font-size: 18px;
+        padding-top: 18px;
+        padding-bottom: 35px;
+        max-width: 100%;
+    }
+
+    h1 strong {
+        font-size: 37px;
+    }
+
+    .t1 {
+
+        padding-top: 24px;
+        margin-left:19px;
+    }
+
+    
+  
+}
+
+
+h2 {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: 170px;
+}
+
+h2 strong {
+
+    font-size: 47px;
+}
+
+
+@media (max-width:700px){
+
+    h2 {
+        margin-top: 126px;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        text-align: center;
+    }
+
+    h2 strong { 
+        font-size: 24px;
+    }
+
+    .alert-danger {
+
+        top: 100px !important;
+    }
+
+}
+
+
+@media (700px <= width <= 900px) {
+
+    .buttons {
+
+        width: 100%;
+        height: 100%;
+    }
+
+    .buttons .btn {
+
+        width:230px;
+        margin-top: 2px;
+    }
+
+}
+
+
+
+
+input {
+
+    margin-bottom: 20px;
+    position: relative;
+    display: block;
+    top: 42px;
+    width: 100%;
+    height: 100%;
+    border-width: 2px;
+    border-radius: 8px;
+}
+
+
+
+
+
+
+.form-cont input {
+
+    width: 60%;
+    height: 45px ;
+    row-gap: 20px;
+
+}
+
+input:hover  {
+
+    color: green;
+    cursor: pointer;
+}
+
+
+@media (max-width:700px) {
+
+    .form-cont {
+
+        width: 100%;
+        height: 100%; 
+        margin-top: -25px;
+
+    }
+
+    .form-cont input {
+        width:319px;
+        margin: 13px;
+
+    }
+
+}
+
+button {
+
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+
+    
+}
+
+.btn {
+    width: 29%;
+    height: 50px;
+    top: 50px;
+    transition: 1s;
+
+
+}
+
+.btn:hover{
+    color: rgb(114, 248, 114);
+    box-shadow: 0px 0px 5px 5px rgb(206, 209, 206);
+
+}
+
+
+
+
+@media (max-width:700px) {
+
+    button {
+        width: 100%;
+        height: 100%;
+        
+       
+    }
+
+    .btn {
+
+        height: 50px;
+        width: 150px;
+        margin-top: -5px;
+    }
+
+ 
+
+}
+
+
+.Login-link {
+
+    position: relative;
+    margin-top: 120px;
+}
+
+@media (max-width:700px) {
+    .Login-link {
+        margin-top:57px;
+    }
+}
+
+
+
+a:hover {
+    color: rgb(114, 248, 114);
+}
+
+
+a {
+    color: rgb(10, 22, 246);}
+
+
+
+
+
+@media (700px <= width <= 900px) {
+
+
+    h2 {
+
+        margin-top: 220px;
+    }
+
+    h2 strong {
+
+        font-size: 38px;
+    }
+
+    .form-cont {
+        margin-top: 40px;
+    }
+
+    
+    .Login-link {
+
+        position: relative;
+        margin-top: 70px;
+        text-align: center;
+    }  
+
+
+    .btn {
+
+        margin-top: 20px;
+    }
+
+  
+    .footer {
+
+       height: 200px;
+       width: 100%;
+       position: absolute;
+       bottom: 0;
+
+       
+    }
+
+
+
+      
+    label {
+
+        margin-left: 360px;
+        margin-bottom: 10px;
+    }
+
+
+    #id_email {
+        width: 80%;
+        margin-left: 80px;
+    }
+
+}
+
+
+
+@media (min-width:3800px) {
+
+    label {
+        margin-left: 48%;
+        font-size: 67px; }
+
+    h2 {
+
+        font-size: 78px;
+    }
+
+}
+
+
+
+
+
+.footer {
+
+    border-style: solid;
+    border-color: rgb(227, 230, 230);
+    width: 100%;
+    margin-top: 10%;
+    background-color: rgb(13, 2, 101); 
+    bottom: 0;
+    position: relative;
+}
+
+
+
+
+.copyright-site {
+
+    padding-top: 6px;
+    margin-right: 1px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    max-width: 100%;
+
+}
+
+
+.copyright-site a {
+
+    color: grey;
+    margin-right: 3px;
+    padding-top: 18px;
+}
+
+.f-img {
+
+    margin-top: 18px;
+}
+
+
+.footer-div {
+    
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 6px;
+    margin-left: 3px;
+    margin-top: 6px;
+}
+
+.links-f {
+
+    width: 50%;
+    height: 100%;
+    margin-top: 7px;
+    margin-left: 6px;
+    line-height: 1.0;
+    text-decoration: none;
+}
+
+.links-f a {
+    text-decoration: none;
+    color: rgb(226, 223, 223);
+}
+
+
+    
+@media (max-width:700px) {
+
+
+    .copyright-site a {
+
+       
+        padding-bottom:1px;
+        
+    
+    }
+
+    .footer {
+         bottom: 0;
+         position:fixed;
+
+    }
+
+    .info li {
+
+        font-size: 17px;
+
+
+    }
+
+    .wholink {
+
+        font-size: 16px;
+    }
+
+    .links-f {
+        font-size:12px;
+        margin-top: 2;
+        line-height: .5;
+        margin-left: 8px;
+    }
+
+    .footer-div {
+        width: 90%;
+    }
+
+
+
+    .copyright-site a {
+        font-size: 12px;
+    }
+   
+ }
+
+
+ @media (max-width:380px) {
+
+
+    h2 {
+        margin-top: 110px;
+    }
+
+    h2 strong { 
+        font-size: 27px;
+    }
+
+    .form-cont {
+ 
+        margin-top: -35px;
+        
+
+
+    }
+
+
+    .form-cont input {
+        max-width: 80%;
+        height: 30px;
+    }
+
+    .wholink {
+
+        font-size: 14px;
+    }
+
+    .btn {
+
+        height: 32px;
+        width: 230px;
+        margin-top: -5px;
+        padding-bottom: 32px!important;
+        font-size: 17px;
+        font-weight: bold;
+        
+    
+    }
+
+
+    .error-messages {
+
+        max-width: 85%!important;
+        margin-left: 7%;
+    }
+
+
+
+
+    .links-f {
+
+        font-size: 9px;
+    }
+
+    .copyright-site a {
+
+        font-size: 10px;
+        padding-top: 22px;
+    }
+
+    .copyright-site {
+        right: 0;
+    }
+
+
+ }
+
+
+ @media (700px <= width <= 900px) {
+
+    .container {
+        display:grid;
+        row-gap: 20px;
+       
+    }
+
+    .bt-mg { order: -1;}
+
+    .img-sect {
+
+       order: 2;
+       width: 100%;
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       column-gap: 10px;
+      
+    }
+
+    .footer {
+
+        bottom: 0;
+        position: fixed;
+    }
+
+}
+
+
+@media (min-width:1281px) {
+
+    .btn {
+
+        font-size: 20px;
+    }
+
+
+    .Login-link {
+
+        font-size: 23px;
+
+    }
+
+
+}

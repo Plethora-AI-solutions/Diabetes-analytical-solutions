@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Diabetes form</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="stylesheet" href="/static/css/RF_form.css?{% now "U" %}"/>
+        
+    </head>
+    <body>
+
+        {% load static %}
+
+        <h1>
+            <b> 
+            <strong> | </strong> 
+            <div class='t1'>
+
+                Diabetes diagnosis system
+
+            </div>
+            
+            </b>
+            
+        </h1>
+
+        <h2 id='h2'>
+            <strong>
+                Fill the form
+            </strong>
+        </h2>
+
+          
+            {% for pp in pid %}
+                {% if request.user.id == pp.id %}
+
+                <form action= 'diabetes-dignosis-results/{{pp.last_name}}', method = 'post'>
+                    {% csrf_token %}
+    
+                        <div class='form'>
+                            <center>
+    
+    
+                                <div class='HbA'>
+                                    <input type="number"  min="0" max="1000"  step = "0.1" name='HbA1c_level' placeholder=' Enter your HbA1c level' required />
+                                
+                                </div>
+    
+                                <div class='blood_glu_level'>
+                                    <input type="number", name='blood_glucose_level' min = "0" placeholder = 'Enter your blood glucose level' required>
+                                </div>
+    
+                                <div class='age'>
+                                    <input type="number" name='age' min="0" max="120"
+                                    placeholder = 'Enter your age' required>
+                                </div>
+    
+                                
+                                <div class='bmi'>
+                                    <input type="number" step="0.1" min="0" max="1000" name='bmi' placeholder='Enter your bmi' required>
+                                </div>
+                                
+                                <div class='hyper_t'>
+                                    <select name="hypertension" id="hypertension" required>
+    
+                                        <option value=""> Do you have hypertension? </option>
+    
+                                        <option value="1">Yes - I have hypertension </option>
+                                        <option value="0"> No - I do not have hypertension</option>
+                                    </select>
+                                </div>
+                            </center>    
+                        </div>
+    
+    
+                        <div class='submitdiagnose'>
+    
+                            <div class="diagnoseform" >
+                                <center>
+    
+                                    <button id="diagnoseform"
+                                    type='submit' class="btn btn-primary" type="button">
+        
+                                    <b>
+                                        Diagnose
+        
+                                    </b>
+                                    </button>
+                                    
+                              
+                            </div>
+                        
+    
+                            <div class="patienthome">
+    
+                                <center>
+                                <a href="{% url 'Patients_page' %}">
+    
+                                    <button  
+                                    class="btn btn-primary" type="button">
+    
+                                        <b>
+                                            Home
+                                        </b>
+                                    
+                                    </button>
+                                <a/>
+                            </div>
+    
+    
+                        </div>
+                </form>
+                
+                
+                {% endif %}
+            
+            {% endfor %}
+            
+            
+            
+
+
+
+            
+                <div class='Alert1' id='Alert1'>
+
+                    <h3>
+                        Alert
+                    </h3>
+                    <p>
+                        Please ensure the medical information you enter is correct.
+                        If inaccurate, it could significantly impact YOUR diagnosis 
+                        <b>
+                            RESULTS!
+                        </b>
+                        
+                    </p>
+                    <button type='button' id='popB'>
+                        <b>
+                            OK
+                        </b>
+                    </button>
+                        
+                </div>
+
+
+
+
+
+                
+                    <div class='footer'>
+
+                        <div class='copyright-site'>
+
+                            <a href=" http://127.0.0.1:8000/"> 
+                                
+                                Diabetes system
+                            </a>   
+                            <img class='f-img'width='30px' height = '22px'src="{% static 'copyright.jpg' %}" alt="copyright symbol">  
+
+                        </div>
+
+                        <div class = 'footer-div'>
+                            <div class='links-f'>
+
+                                <p>
+                                    <a 
+                                        href="{% url 'about'%}"> About 
+                                    </a>
+                                </p>
+
+                                <p>
+                                    <a 
+                                    href="{% url 'Patients_page' %}">Home page </a>
+                                </p>
+
+                                <p>
+                                    <a href="{% url 'details'%}" target="_blank">
+                                        Useful informtaion
+
+                                    </a>
+                                </p>
+
+                                <p>
+                                    <a href="https://www.cdc.gov/diabetes/basics/symptoms.html" target="_blank"> Centre for disease control</a>
+                                </p>
+
+                                <p>
+                                    <a href=" https://www.diabetes.org.uk/how_we_help/local_support_groups/peer-support" target="_blank"> Peer groups support </a>
+                                </p>
+
+                            </div>
+                            <div class='links-f'>
+
+                                
+                                <p>
+                                    <a href="https://healthmatch.io/high-blood-pressure/how-does-diabetes-cause-hypertension#can-high-blood-pressure-cause-diabetes"  target="_blank"> Daibetes and hypertension </a>
+                                </p>
+
+                                <p>
+                                    <a href="https://www.who.int/news-room/fact-sheets/detail/diabetes#:~:text=Diabetes%20is%20a%20chronic%20disease,hormone%20that%20regulates%20blood%20glucose."  target="_blank"> WHO - daibetes fact sheet </a>
+                                </p>
+
+                                <p>
+                                    <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-england-additional-analyses/ethnicity-and-health-2011-2019-experimental-statistics/overweight-and-obesity"  target="_blank"> NHS - diversity and daibetes </a>
+                                </p>
+
+                        
+                                <p>
+                                    <a href="{% url 'links'%}" target="_blank"> Useful links and resources </a>
+                                </p>
+
+                                <p>
+                                    <a href="{% url 'sign_out'%}"> 
+                                        Log out
+                                    </a>
+                                </p>
+
+
+                            </div>
+                        </div>
+
+                    
+
+                    </div>
+            </div>
+
+        
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+            </script>
+
+        <script src={% static 'rf-form.js' %}></script>
+
+
+    </body onload='alertShow()'>
+</html>

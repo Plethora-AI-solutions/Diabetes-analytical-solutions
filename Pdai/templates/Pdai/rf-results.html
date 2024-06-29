@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta charset="utf-8">
+            <title>Diabetes Results</title>
+            <meta name="description" content="">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="stylesheet" href="/static/css/Rfresults.css?{% now "U" %}"/>
+        <link rel="stylesheet" media="print" href="/static/css/print.css?{% now "U" %}" />
+    </head>
+    <body onload='backCol();greetUser()'>
+
+        {% if request.user.is_authenticated %}
+        {% endif %} 
+
+        {% load static %}
+
+        <header> 
+            <center>
+                <h1>
+                    <b> 
+                    <strong> | </strong> 
+                    <div class='t1'>
+
+                        Diabetes diagnosis system
+
+                    </div>
+                    
+                    </b>
+                    
+                </h1>
+            </center> 
+        </header>
+
+        <h2>
+            <center>
+                <strong>
+
+                    Diabetes results
+
+                </strong>
+            </center>
+            
+        
+        </h2>
+
+
+        <div class='greet-user'>
+
+
+            <p id='greet'>
+
+            </p>
+            &nbsp;
+
+
+                
+
+            <p>
+
+                {{ request.user.first_name}} - Please see your diabetes diagnosis 
+                <b>
+                    <u>RESULTS</u></b> below.
+
+            </p>
+
+
+                
+
+        </div>
+
+
+
+
+        <center>
+
+            <table class="table" id="table" style="background-color:#FFFFE0;">
+
+                <tr>
+                    <th>
+                        Requested information
+                    </th>
+                    <th>
+                        Your details
+                    </th>
+                </tr> 
+
+                <tr>
+                    <td>
+                        First name
+                    </td>
+                    <td>
+                    {{ request.user.first_name }}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Last name
+                    </td>
+                    <td>
+                        {{ request.user.last_name }}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Email
+                    </td>
+
+                    <td>
+                        {{ request.user.email }}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        HbA1c level
+                    </td>
+
+                    <td>
+                        {{ HbA1c_level }}
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Blood glucose level
+                    </td>
+
+                    <td>
+                        {{ blood_glucose_level }}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Age
+                    </td>
+                    <td>
+                        {{ age }}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Bmi
+                    </td>
+
+                    <td>
+                        {{ bmi }}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Hypertension
+                    </td>
+
+                    <td>
+                        {{ hypertension  }}
+                        
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Results
+                    </td>
+
+                    <td>
+                        {{ Rf_results }}
+
+                    </td>
+                </tr>
+            </table>
+        </center>
+
+        <div>
+            <h6>
+
+                <!--{% for item in pid %}
+
+                    {{item.id}}
+
+
+                {% endfor %}-->
+
+                
+            </h6>
+        </div>
+
+        
+
+        <div class='AllButtons'>
+
+            <div class="print"> 
+                <button class="btn btn-primary" style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 70px; --bs-btn-font-size: 16px;" onclick="window.print()">
+                    Print  
+                </button>
+            </div>
+
+            
+            <div class="Back"> 
+                <a href="{% url 'Patients_page'%}">
+                    <button class="btn btn-primary" style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 70px; --bs-btn-font-size: 16px;">
+                    Home
+                    </button>
+                </a>
+            </div>
+
+            <div class="Sign_out"> 
+                <a href="{% url 'sign_out'%}">
+
+                    <button class="btn btn-primary" style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 60px; --bs-btn-font-size: 16px;">
+                        Logout
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        
+        <div class='footer'>
+
+            <div class='copyright-site'>
+
+                <a href=" http://127.0.0.1:8000/"> 
+                    
+                    Diabetes system
+                </a>   
+                <img class='f-img'width='30px' height = '22px'src="{% static 'copyright.jpg' %}" alt="copyright symbol">  
+
+            </div>
+
+            <div class = 'footer-div'>
+                <div class='links-f'>
+
+                    <p>
+                        <a 
+                            href="{% url 'about'%}"> About 
+                        </a>
+                    </p>
+
+                    <p>
+                        <a 
+                        href="{% url 'Patients_page' %}">Home page </a>
+                    </p>
+
+                    <p>
+                        <a href="{% url 'details'%}" target="_blank">
+                            Useful informtaion
+
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="https://www.cdc.gov/diabetes/basics/symptoms.html" target="_blank"> Centre for disease control</a>
+                    </p>
+
+                    <p>
+                        <a href=" https://www.diabetes.org.uk/how_we_help/local_support_groups/peer-support" target="_blank"> Peer groups support </a>
+                    </p>
+
+                </div>
+                <div class='links-f'>
+
+                    
+                    <p>
+                        <a href="https://healthmatch.io/high-blood-pressure/how-does-diabetes-cause-hypertension#can-high-blood-pressure-cause-diabetes"  target="_blank"> Daibetes and hypertension </a>
+                    </p>
+
+                    <p>
+                        <a href="https://www.who.int/news-room/fact-sheets/detail/diabetes#:~:text=Diabetes%20is%20a%20chronic%20disease,hormone%20that%20regulates%20blood%20glucose."  target="_blank"> WHO - daibetes fact sheet </a>
+                    </p>
+
+                    <p>
+                        <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-england-additional-analyses/ethnicity-and-health-2011-2019-experimental-statistics/overweight-and-obesity"  target="_blank"> NHS - daibetes </a>
+                    </p>
+
+            
+                    <p>
+                        <a href="{% url 'links'%}" target="_blank"> Useful links and resources </a>
+                    </p>
+
+                    <p>
+                        <a href="{% url 'sign_out'%}"> 
+                            Log out
+                        </a>
+                    </p>
+
+
+                </div>
+            </div>
+
+        
+
+        </div>
+
+
+        
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+        <script src={% static 'rf-results.js' %}></script>
+        <script src={% static 'patients-home.js' %}></script>
+
+  
+    </body>
+</html>

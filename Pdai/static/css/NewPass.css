@@ -1,0 +1,59 @@
+body {
+
+  background-color: rgb(236, 244, 244);
+}
+
+h1 {
+
+    margin-top: 100px;
+    margin-bottom: 70px;
+    font-size: 67px;
+}
+
+.input-cont {
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+    vertical-align: top;
+    left: -80px;
+    
+
+}
+
+input {
+
+    width: 660px;
+    height:59px;
+    margin: 6px 0px;
+    margin-left: 13px;
+    border-color: black;
+    border-width: 2px;
+}
+
+
+label {
+
+    width: 200px;
+    display: inline-block;
+    font-size: 17px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+
+
+.Rbutton {
+    position: relative;
+    width: 660px;
+    height: 49px;
+    left: 340px;
+    display: grid;
+    margin-top: -130px;
+}
+
+
+button:hover {
+
+    color: rgb(27, 189, 92);
+}
