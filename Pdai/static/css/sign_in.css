@@ -16,7 +16,7 @@ body {
 h1 {
     text-align: left;
     width: 100%;
-    top: 0;
+    top: 0!important;
     position:relative;
     text-transform: uppercase; 
     background-color: rgb(27, 4, 205);
@@ -200,7 +200,7 @@ button:hover {
         width: 100%;
         margin-top: 130px;
         position: relative;
-        padding: 7px 30px;
+        padding: 7px 40px;
         vertical-align:top;
         justify-content:center;
         row-gap: 10px; 
@@ -212,11 +212,17 @@ button:hover {
 
         width: 75%;
         height: 45px;
-        padding: 14px 40px;
+        padding: 4px 30px;
         border-radius: 15px;
         font-size: 15px;
 
 
+    }
+
+    .alert-danger {
+        margin-top: -15%!important;
+      
+        
     }
 
 }
@@ -331,16 +337,18 @@ a:hover {
 
 .alert-danger {
 
-    top: 160px;
+    top: 170px;
     background-color: rgb(246, 73, 73);
     color: rgb(1, 1, 11);
-    height: 35px;
-    width: 580px;
+    height: 44px;
+    width: 95%;
     padding-top: 5px;
     font-size: 13px;
+    margin-top: -5%;
   
     
 }
+
 
 
 

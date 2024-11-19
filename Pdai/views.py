@@ -20,6 +20,7 @@ import pickle
 import pandas as pd
 from .models import predict
 from .models import RF_model
+import os 
 # from django.contrib.auth.decorators import user_passes_test
 # from django.core.exceptions import PermissionDenied
 
@@ -54,7 +55,7 @@ def register(request):
         P_user.is_active = False
         P_user.save()
 
-        if P_user.username.endswith("@outlook.com"):
+        if P_user.username.endswith("@DDSPractitioners.com"):
             Practitioners_Group = Group.objects.get(name="Practitioners")
             P_user.groups.add(Practitioners_Group)
             Prac_subject = "Diabetes diagnosis system"
@@ -65,7 +66,7 @@ def register(request):
             Prac_UserEmail = [P_user.username]
             send_mail(Prac_subject, Prac_message, Prac_BaseEmail, Prac_UserEmail)
 
-        elif P_user.username.endswith("@gmail.com"):
+        elif P_user.username.endswith("@DDSExecutives.com"):
             Executives_Group = Group.objects.get(name="Executives_Summary")
             P_user.groups.add(Executives_Group)
             Executives_SubjectEmail = "Diabetes diagnosis system"
@@ -302,12 +303,26 @@ def SVMPred(request):
             request, "Pdai/rf-results.html", context =context
         )
 
-
+from google.cloud import aiplatform
 #Predict with RF model
 @login_required()
 def Rf(request, id):
     if request.method == "POST":
-        RFM = pickle.load(open("Dai_RFM.pkl", "rb"))
+        
+        # crrent_direct = os.getcwd()
+        # Saved_model = os.path.join(crrent_direct, 'Dai_RfM.pkl')
+        # with open(Saved_model, 'rb') as f:
+        #     RFM = pickle.load(f)
+        
+        
+        ENDPOINT_ID="8120350767962914816"
+        PROJECT_ID="724667865468"   
+        
+        
+        endpoint_name=f"projects/{PROJECT_ID}/locations/europe-west8/endpoints/{ENDPOINT_ID}"
+
+        RFM = aiplatform.Endpoint(endpoint_name=endpoint_name)
+        
         db_new = pd.read_csv("db_new.csv")
 
         HbA1c_level = request.POST["HbA1c_level"]
@@ -346,7 +361,7 @@ def Rf(request, id):
         else:
             Rf_results = "Positive"
 
-        proba = RFM.predict_proba([[hypertension, HbA1c_level, blood_glucose_level, bmi, age]])
+        #proba = RFM.predict_proba([[hypertension, HbA1c_level, blood_glucose_level, bmi, age]])
 
         # for i in proba:
         # for j, n in enumerate(i):
@@ -363,7 +378,7 @@ def Rf(request, id):
         bmi=bmi,
         hypertension=hypertension,
         RF_predicted=Rf_results,
-        RF_prob = proba    
+        #RF_prob = proba    
         )
 
         Rresult.save() 
@@ -417,3 +432,6 @@ def details(request):
         return render(request, "Pdai/details.html", {'pid':pid})  
     else:
         return redirect('home')   
+
+
+

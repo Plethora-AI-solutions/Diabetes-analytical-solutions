@@ -14,123 +14,117 @@
     </head>
     <body>
 
-        {% load static %}
+    {% load static %}
 
-
-     
-
-            <header> 
-                <center>
-                    <h1>
-                        <b> 
-                        <strong> | </strong> 
-                        <div class='t1'>
-        
-                            <a href="http://127.0.0.1:8000/">
-                                
-                                Diabetes diagnosis system
-                            </a>
-        
-                        </div>
-                         
-                        </b>
-                          
-                    </h1>
-                </center> 
-            </header>
-
-
-                <fieldset>
-                    {{form}}
-                </fieldset>
-
-
-               
-
-           
-
-             
-
-                    <div class='H2-element'>
-                        <h2>
-                            <center>
-                                <strong>
-                                    Register your account
-                                </strong>
-                            </center>
-                        </h2>
-
+        <header> 
+            <center>
+                <h1>
+                    <b> 
+                    <strong> | </strong> 
+                    <div class='t1'>
+    
+                        <a href="https://diabetes-analytical-solutions-724667865468.europe-west2.run.app/">
+                            
+                            Diabetes diagnosis system
+                        </a>
+    
                     </div>
-
-                    <div class='error-messages' id='error-messages' >
-
-
-                        <span id='fname-error'></span>
-                        <span id= 'sname-error'></span>
-                        <span id= 'pass-error'></span>
-                        <span id= 'pass-error'></span>
+                        
+                    </b>
+                        
+                </h1>
+            </center> 
+        </header>
 
 
-                    
-                    </div>
+            <fieldset>
+                {{form}}
+            </fieldset>
 
 
-               
+            
 
+        
 
+            
 
-                <div class = 'form-cont'>
-
-                    <form id='formm', action='', method="POST">
-
-                        {% csrf_token %}
-
-
-                    
+                <div class='H2-element'>
+                    <h2>
                         <center>
-                            <div class='input-form'>
-                                <input
-                                    type="text",  name="fname", id="fname", placeholder="Enter your name *" required>
-                            </div>
-
-
-                            <div class='input-form'>
-                                <input type="text", name="sname", id="sname", placeholder="Enter your surname *" required>
-                            </div>
-
-                            <div class='input-form'>
-                                <input type="email", name="email", id="email", placeholder="Enter your email *" required>
-                            <div>
-
-                            <div class='input-form'>
-                                <input type="password" name="pass1" id="pass1", placeholder="Enter your password *" required>
-                            </div>
-
-
-                            <div class='input-form'>
-                                <input type="password"
-                                    name="pass2" id="pass2", placeholder="Confirm your password *" required>
-                            </div>
-
-                    </form >
+                            <strong>
+                                Register your account
+                            </strong>
+                        </center>
+                    </h2>
 
                 </div>
-                    
 
-                </div class= 'button_con'>
+                <div class='error-messages' id='error-messages' >
+
+
+                    <span id='fname-error'></span>
+                    <span id= 'sname-error'></span>
+                    <span id= 'pass-error'></span>
+                    <span id= 'pass-error'></span>
+
+
+                
+                </div>
+
+
+            
+
+
+
+            <div class = 'form-cont'>
+
+                <form id='formm', action='register', method="POST">
+
+                    {% csrf_token %}
+
+
+                
+                    <center>
+                        <div class='input-form'>
+                            <input
+                                type="text",  name="fname", id="fname", placeholder="Enter your name *" required>
+                        </div>
+
+
+                        <div class='input-form'>
+                            <input type="text", name="sname", id="sname", placeholder="Enter your surname *" required>
+                        </div>
+
+                        <div class='input-form'>
+                            <input type="email", name="email", id="email", placeholder="Enter your email *" required>
+                        <div>
+
+                        <div class='input-form'>
+                            <input type="password" name="pass1" id="pass1", placeholder="Enter your password *" required>
+                        </div>
+
+
+                        <div class='input-form'>
+                            <input type="password"
+                                name="pass2" id="pass2", placeholder="Confirm your password *" required>
+                        </div>
+
+                    </div class= 'button_con'>
 
                     <div class='buttons'>
                         <div class="d-grid gap-2">
                             <center>
-                        
+                    
+                    
 
-                            <button id= 'clear-content' class="btn btn-primary" type="reset">
+                            <button type="reset" id = 'clear-content' class="btn btn-primary" >
                                 Clear
                             </button>
 
-                            <button  
-                            type= 'submit' id='regis-submit' class="btn btn-primary" type="button">Register
+                            
+                            <button  type ='submit' id='regis-submit' class="btn btn-primary">Register
                             </button>
+                            
                             </center>
                         </div>
                     </div>
@@ -149,8 +143,15 @@
                             </p>
                         </center>
                     </div>
-                </div>    
+                    </div>    
 
+
+                </form >
+
+            </div>
+                    
+
+                
 
 
           
@@ -158,7 +159,7 @@
 
             <div class='copyright-site'>
 
-                <a href=" http://127.0.0.1:8000/">
+                <a href="https://diabetes-analytical-solutions-724667865468.europe-west2.run.app/">
                      Diabetes system
                 </a>   
                 <img class='f-img'width='30px' height = '22px'src="{% static 'copyright.jpg' %}" alt="copyright symbol">  

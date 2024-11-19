@@ -10,7 +10,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path("", views.home, name="home"),
-    path("register/", views.register, name="register"),
+    path("register", views.register, name="register"),
     path("sign_in", views.sign_in, name="sign_in"),
     path("activate/<uidb64>/<token>", views.activate, name="activate"),
     path("practitioners", views.Practitioners_page, name="Practitioners_page"),
@@ -22,8 +22,7 @@ urlpatterns = [
     path("links", views.link, name="links"),
     path("Ex-about", views.Exabout, name="Exabout"),
     # Password reset
-    path(
-        "submit-pass/",
+    path("submit-pass/",
         auth_views.PasswordResetView.as_view(
             template_name="Pdai/passrest.html",
             html_email_template_name="Pdai/password_reset_email.html",

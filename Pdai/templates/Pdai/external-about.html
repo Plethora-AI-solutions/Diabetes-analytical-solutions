@@ -9,6 +9,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <link rel="stylesheet" href="/static/css/about.css?{% now "U" %}"/>
+        <script src="https://kit.fontawesome.com/6646e93743.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
     </head>
     <body>
 
@@ -16,54 +18,158 @@
 
         <div class='container1'>
 
-            <div>
+            <h1>
+            <b> 
+            <strong> | </strong> 
+            <div class='t1'>
 
-                <h1>
-                    <b> 
-                    <strong> | </strong> 
-                    <div class='t1'>
+                 <a href="https://diabetes-analytical-solutions-724667865468.europe-west2.run.app/">
 
                         Diabetes diagnosis system
 
-                    </div>
-                    
-                    </b>
-                    
-                </h1>
+                    </a>
 
             </div>
+                
+            </b>
+                
+        </h1>
+
+        <div class='bars' id='bars'>
 
 
-          
+            <i class="fa-solid fa-bars fa-2xl" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"></i>
+
+        </div>
 
 
-            </dir>
+        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasTopLabel"> 
+
+                        Navigation
+
+                    
+                </h5>
+                <button type="button" class="btn-close"
+                
+                data-bs-dismiss="offcanvas" aria-label="Close">
+
+                </button>
+            </div>
+            <div class="offcanvas-body">
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}"> 
+                    <b> 
+                        Home 
+                    </b>
+                </a>
+
+            
+
+                    <a class="nav-link active" href="{% url 'register' %}">
+                        <b>
+                            Register
+                        </b>
+                    </a>
 
 
-            <div class='container1'>
+                    <a class="nav-link active" href="{% url 'sign_in' %}"> 
+                        <b> 
+                            Sign in 
 
-                <div class='wrapper'>
+                        </b> 
+                    </a>
+            </div>
+        </div>
+
+        <div class='navt' id = "navt">
+
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item" >
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}" > 
+                        <b> 
+                            Home 
+                        </b>
+                    </a>
+                </li>
+
+                <li class="nav-item" id ='dclick'>
+
+                            <a class="nav-link active"  href="{% url 'register' %}"> 
+                                <b> 
+                                   Register 
+                                </b> 
+                            </a>
+                        
+                  
+                 
+
+                </li>
 
 
-                    <div>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'sign_in' %}"> 
+                        <b> 
+                            Sign in 
 
-                        <center class='about-title'>
+                        </b> 
+                    </a>
+                </li>
+            </ul>
 
-                            <h5>
+        </div>
+
+
+        <div class='greet-user'>
+
+            <h2> 
+
+                    <b> 
+                        <p id='greet'> 
+
+                        </p> 
+
+                        <p>
+
+                            {{ request.user.first_name}}
+
+                        </p>
+
+
+                        
+                    </b>
+                </p>
+                
+
+            </h2>
+
+        </div>
+
+
+
+            <div class='container'>
+
+                <div class='about-info-section'>
+
+                    <div class='about-info-section-header'>
+
+                        <center >
+
+                            
                                 <strong>
         
                                     About
         
                                 </strong>
                                 
-                            </h5>
+                            
         
                         </center>
                         
                     </div>
 
 
-                    <div>
+                    <div class= 'about-section'>
 
                         <p>
 
@@ -109,15 +215,15 @@
 
                 </div>
         
-                <div class='wraper2'>
+                <div class='diabetes-vis'>
 
-                    <div class='item-one'>
+                    <div class='item-img'>
 
                         <img src="{% static 'img3.jpg' %}" alt=" Managing daibetes">
 
                     </div>
 
-                    <div class='item-two'>
+                    <div class='item-img'>
 
                         <img src="{%  static 'img4.jpg' %}" alt="Ripped news paper with diabetes on it">
 
@@ -125,21 +231,26 @@
         
                 </div>
 
-                <div class='wraper3'>
-
-                    <h6>
-
-                        <strong>
-
-                            <center>
-
-                                Contacts
+                <div class='diabetes-contact-section'>
 
 
-                            </center>
+                    <div class='about-info-section-header'>
 
-                        </strong>
 
+                        <center>
+
+                            <strong>
+
+                                Contacts 
+
+                            </strong>
+
+
+
+                        </center>
+
+
+                    </div>
 
 
                         <ul>
@@ -182,122 +293,98 @@
 
 
                         </ul>
-
-                        
-
-
-
-                    </h6>
-                        
-                        
-                    
-
-
                 </div>
 
 
             </div>
-
-
 
 
             <div class='footer'>
 
-                    <div class='item-links1'>
+                <div class='copyright-site'>
 
-
-                        <div class='link-inner'>
-
-                            <strong>
-
-                                <p>
-                                    <a 
-                                        href="{% url 'about'%}"> About 
-                                    </a>
-                                </p>
-
-                                <p>
-                                    <a 
-                                    href="{% url 'Patients_page' %}">Home page </a>
-                                </p>
-
-                                <p>
-                                    <a href="{% url 'details'%}">
-                                        Useful informtaion
-
-                                    </a>
-                                </p>
-
-                                <p>
-                                    <a href="https://www.cdc.gov/diabetes/basics/symptoms.html" target="_blank"> Centre for disease control and prevention</a>
-                                </p>
-
-                                <p>
-                                    <a href="https://healthmatch.io/high-blood-pressure/how-does-diabetes-cause-hypertension#can-high-blood-pressure-cause-diabetes"  target="_blank"> Daibetes and hypertension </a>
-                                </p>
-
-                                <p>
-                                    <a href="https://www.who.int/news-room/fact-sheets/detail/diabetes#:~:text=Diabetes%20is%20a%20chronic%20disease,hormone%20that%20regulates%20blood%20glucose."  target="_blank"> WHO - daibetes fact sheet </a>
-                                </p>
-
-                                <p>
-                                    <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-england-additional-analyses/ethnicity-and-health-2011-2019-experimental-statistics/overweight-and-obesity"  target="_blank"> NHS - diversity and daibetes </a>
-                                </p>
-
+                    <a href="https://diabetes-analytical-solutions-724667865468.europe-west2.run.app/"> 
                         
-                                <p>
-                                    <a href="{% url 'links'%}" target="_blank"> Useful links and resources </a>
-                                </p>
-
-                                <p>
-                                    <a href=" https://www.diabetes.org.uk/how_we_help/local_support_groups/peer-support" target="_blank"> Peer groups support </a>
-                                </p>
-
-                               
-
-                                <p>
-                                    <a href="{% url 'sign_out'%}"> 
-                                        Log out
-                                    </a>
-                                </p>
-
-
-                            </strong>
-                        </div>
-
-                        <div class='copyright'>
-                            <img width='30px' height = '22px'src="{% static 'copyright.jpg' %}" alt="copyright symbol">
-                        </div>
-
-                        <div class='sitelink'>
-
-                            <a href="Patients
-                            ">
-                            http://127.0.0.1:8000/
-                            </a>
-                
-                        </div>
-
-                  
-                   
-                   
+                        Diabetes system
+                    </a>   
+                    <img class='f-img'width='30px' height = '22px'src="{% static 'copyright.jpg' %}" alt="copyright symbol">  
 
                 </div>
 
-              
+                <div class = 'footer-div'>
+                    <div class='links-f'>
 
-               
+                        <p>
+                            <a 
+                                href="{% url 'about'%}"> About 
+                            </a>
+                        </p>
+
+                        <p>
+                            <a 
+                            href="{% url 'Patients_page' %}">Home page </a>
+                        </p>
+
+                        <p>
+                            <a href="{% url 'details'%}" target="_blank">
+                                Useful informtaion
+
+                            </a>
+                        </p>
+
+                        <p>
+                            <a href="https://www.cdc.gov/diabetes/basics/symptoms.html" target="_blank"> Centre for disease control</a>
+                        </p>
+
+                        <p>
+                            <a href=" https://www.diabetes.org.uk/how_we_help/local_support_groups/peer-support" target="_blank"> Peer groups support </a>
+                        </p>
+
+                    </div>
+                    <div class='links-f'>
+
+                        
+                        <p>
+                            <a href="https://healthmatch.io/high-blood-pressure/how-does-diabetes-cause-hypertension#can-high-blood-pressure-cause-diabetes"  target="_blank"> Daibetes and hypertension </a>
+                        </p>
+
+                        <p>
+                            <a href="https://www.who.int/news-room/fact-sheets/detail/diabetes#:~:text=Diabetes%20is%20a%20chronic%20disease,hormone%20that%20regulates%20blood%20glucose."  target="_blank"> WHO - daibetes fact sheet </a>
+                        </p>
+
+                        <p>
+                            <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-england-additional-analyses/ethnicity-and-health-2011-2019-experimental-statistics/overweight-and-obesity"  target="_blank"> NHS - diversity and daibetes </a>
+                        </p>
 
                 
-        
+                        <p>
+                            <a href="{% url 'links'%}" target="_blank"> Useful links and resources </a>
+                        </p>
+
+                        <p>
+                            <a href="{% url 'sign_out'%}"> 
+                                Log out
+                            </a>
+                        </p>
+
+
+                    </div>
+                </div>
+
+            
+
             </div>
+       </div>
+
+       
 
         </div>
         
-        <script src="" async defer></script>
+        <script src={% static "about.js" %} ></script>
 
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
         </script>
-    </body>
+        <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </body onload='greetUser()'>
 </html>

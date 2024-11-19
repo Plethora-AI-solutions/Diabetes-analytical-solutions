@@ -44,7 +44,7 @@
                 <strong> | </strong> 
                 <div class='t1'>
 
-                    <a href="http://127.0.0.1:8000/">
+                    <a href="https://diabetes-analytical-solutions-724667865468.europe-west2.run.app/">
 
                         Diabetes diagnosis system
 
@@ -71,7 +71,7 @@
             </div>
 
         <form action='sign_in', method='POST'>
-        {% csrf_token %}
+            {% csrf_token %}
     
         
             <div class='email-container'>
@@ -93,15 +93,15 @@
 
             <div class='full-buttons-container' >
 
-                <div class= 'button'>
+
+                <div class='button'>
                     <center>
-                    <a  class = 'Button_back' href="{% url 'home' %}"> 
-                        <button type="button"  class="btn btn-primary" style="--bs-btn-padding-y: 15px; --bs-btn-padding-x: 90px; --bs-btn-font-size: 19px;"> 
+                        <button type="submit"  class="btn btn-primary"
+                        style="--bs-btn-padding-y: 15px; --bs-btn-padding-x: 90px; --bs-btn-font-size: 19px;"  > 
                         
-                            Back 
+                                Login 
                             
                         </button>
-                    </a>
                     </center>
                 </div>
 
@@ -114,17 +114,20 @@
                     </center>
                 </div>
 
-
-                <div class='button'>
+                <div class= 'button'>
                     <center>
-                        <button type="submit"  class="btn btn-primary"
-                        style="--bs-btn-padding-y: 15px; --bs-btn-padding-x: 90px; --bs-btn-font-size: 19px;"  > 
+                    <a  class = 'Button_back' href="{% url 'register' %}"> 
+                        <button type="button"  class="btn btn-primary" style="--bs-btn-padding-y: 15px; --bs-btn-padding-x: 90px; --bs-btn-font-size: 19px;"> 
                         
-                                Login 
+                            Register 
                             
                         </button>
+                    </a>
                     </center>
                 </div>
+
+
+                
 
             </div>
             <div  class='F-link'> 
@@ -149,7 +152,7 @@
 
                 <div class='copyright-site'>
 
-                    <a href=" http://127.0.0.1:8000/">
+                    <a href="https://diabetes-analytical-solutions-724667865468.europe-west2.run.app/">
                          Diabetes system
                     </a>   
                     <img class='f-img'width='30px' height = '22px'src="{% static 'copyright.jpg' %}" alt="copyright symbol">  
