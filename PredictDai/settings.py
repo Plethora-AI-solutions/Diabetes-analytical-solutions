@@ -3,15 +3,16 @@
 from pathlib import Path
 from . info import *
 from django.contrib.messages import constants as messages
+import os
+from dotenv import load_dotenv
+from urllib.parse import urlparse
+
+
+load_dotenv(override=True)
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
-
 
 
 EMAIL_USE_TLS = EMAIL_USE_TLS
@@ -30,8 +31,18 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG') == 'False'
 
-ALLOWED_HOSTS = ['*']
 
+CLOUDRUN_SERVICE_URL = os.getenv("CLOUDRUN_SERVICE_URL", default=None)
+if CLOUDRUN_SERVICE_URL:
+    ALLOWED_HOSTS = [urlparse(CLOUDRUN_SERVICE_URL).netloc]
+    CSRF_TRUSTED_ORIGINS = [CLOUDRUN_SERVICE_URL]
+    SECURE_SSL_REDIRECT = True
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+else:
+    ALLOWED_HOSTS = ["diabetes-diagnoses-system-724667865468.europe-west2.run.app"]
+
+
+#ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -56,6 +67,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'livereload.middleware.LiveReloadScript',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'PredictDai.urls'
@@ -83,17 +95,30 @@ WSGI_APPLICATION = 'PredictDai.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 
-
-DATABASES = {
-    "default": {
-        "ENGINE": os.getenv("ENGINE"),
-        "NAME": os.getenv("NAME"),
-        "USER": os.getenv("USER"),
-        "PASSWORD": os.getenv('PASSWORD'),
-        "HOST": os.getenv("HOST"),
-        "PORT": os.getenv("PORT"),
+if os.getenv('K_REVISION', None):
+    DATABASES = {
+        "default": {
+            "ENGINE": os.getenv('ENGINE'),
+            "NAME": os.getenv('NAME'),
+            "USER": os.getenv('USER'),
+            "PASSWORD": os.getenv('PASSWORD'),
+            "HOST": os.getenv('HOST'),  
+            "PORT": os.getenv('PORT'),
+        }
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": os.getenv('ENGINE'),
+            "NAME": os.getenv('NAME'),
+            "USER": os.getenv('USER'),
+            "PASSWORD": os.getenv('PASSWORD'),
+            "HOST": os.getenv('LOCAL_HOST'),
+            "PORT": os.getenv('PORT'),   
+        }
+    }
+    
+    
 
 
 # Password validation
@@ -130,7 +155,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 
@@ -141,8 +168,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
 
 
 LOGIN_URL = 'home'
