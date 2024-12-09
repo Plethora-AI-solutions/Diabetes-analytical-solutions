@@ -8,7 +8,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <link rel="stylesheet" href="/static/css/Rfresults.css?{% now "U" %}"/>
-        <link rel="stylesheet" media="print" href="/static/css/print.css?{% now "U" %}" />
+        <link rel="stylesheet" media="print" href="/static/css/print.css?{% now "U" %}"/>
     </head>
     <body onload='backCol();greetUser()'>
 
@@ -60,9 +60,9 @@
 
             <p>
 
-                {{ request.user.first_name}} - Please see your diabetes diagnosis 
+                {{ request.user.first_name}} - Please see your 
                 <b>
-                    <u>RESULTS</u></b> below.
+                    <u>diabetes diagnosis  RESULTS</u></b> below.
 
             </p>
 
@@ -80,10 +80,10 @@
 
                 <tr>
                     <th>
-                        Requested information
+                        Requested Information
                     </th>
                     <th>
-                        Your details
+                        Your Details
                     </th>
                 </tr> 
 

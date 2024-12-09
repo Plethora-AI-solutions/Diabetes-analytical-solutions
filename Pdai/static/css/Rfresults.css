@@ -54,6 +54,12 @@ h2 {
     background-color: rgb(246, 246, 235);
 }
 
+.greet-user {
+
+    margin-top: 40px!important;
+    margin-bottom: 40px!important;
+}
+
 
 .greet-user p {
 
@@ -61,6 +67,11 @@ h2 {
     font-size: 18px;
 
 }
+
+.greet-user p u {
+
+    text-transform: uppercase;
+  }
 
 #greet {
 

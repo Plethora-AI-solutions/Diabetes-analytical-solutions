@@ -1,0 +1,647 @@
+body {
+
+    background-color: rgb(236, 244, 244);
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+h1 {
+    text-align: left;
+    width: 100%;
+    top: 0!important;
+    position:relative;
+    text-transform: uppercase; 
+    background-color: rgb(27, 4, 205);
+    height: 100px;
+    padding: 10px;
+    padding-left: 12px;
+    font-size: 30px; 
+    color: rgb(217, 217, 218);
+    
+    
+  }
+
+
+h1 a {
+    text-decoration: none;
+    color: rgb(217, 217, 218);
+
+}
+
+
+
+h1 strong {
+
+    font-size: 65px;
+    width: 30px;
+    margin-right: -10px;
+    margin-top: 178px;
+
+}
+
+.t1 {
+
+    margin-top: -51px;
+    margin-left: 21px;
+}
+
+
+@media (max-width:700px) {
+
+    h1 {font-size: 21px;
+        width: 100%;
+    }
+
+}
+
+
+h2{
+
+    position: relative;
+    top: 128px;
+    font-family: Source Sans Pro,  Lora;
+    margin-bottom: 20px;
+    font-size: 65px;
+   
+}
+
+
+@media (max-width:700px) {
+
+    h2 {
+        font-size: 40px;
+        margin-top: -70px;
+    }
+
+    .alert-success {
+
+        font-size: 12px!important;
+        height:33px!important;
+        width: 390px!important;
+        left: 5%!important;
+    }
+
+    
+    
+}
+
+
+@media (orientation:landscape) {
+
+    h2 {
+        margin-top: -86px;
+    }
+}
+
+::placeholder {
+    color: rgb(46, 68, 64);
+}
+
+form {
+
+    width: 100%;
+    height:100%;
+}
+
+input {
+    position: relative;
+    display: inline-block;
+    top: 115px;
+    width: 60%;
+    border-radius: 8px;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    border-color:rgb(163, 162, 162);
+    border-width: 2px;
+    height: 55px;
+
+}
+
+@media (max-width:700px) {
+
+    input {
+
+        width: 80%;
+        height: 45px;
+    }
+}
+
+
+@media (700px <= width <= 900px) {
+
+    input {
+
+        width: 80%;
+    }
+
+    .alert-success {
+
+        font-size: 17px!important;
+        left: 10%!important;
+    }
+}
+
+
+
+
+.full-buttons-container {
+
+   
+    display: flex;
+    width: 100%;
+    margin-top: 120px;
+    position: relative;
+    padding: 12px 40px;
+    vertical-align:top;
+    justify-content:center;
+    column-gap: 15px;
+    
+    
+}
+
+.button a{
+
+    text-align: center;
+    color: White;
+    text-decoration: none;
+
+}
+
+.btn {
+    width: 245px;
+    height: 55px;
+}
+
+
+
+button:hover {
+
+    color: rgb(114, 248, 114)!important;
+    box-shadow: 0px 0px 5px 5px rgb(206, 209, 206);
+
+}
+
+
+@media (max-width:700px) {
+
+
+    .full-buttons-container {
+        
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 130px;
+        position: relative;
+        padding: 7px 30px;
+        vertical-align:top;
+        justify-content:center;
+        row-gap: 10px; 
+
+
+    }
+
+    .btn {
+
+        width: 75%;
+        height: 45px;
+        padding: 14px 40px;
+        border-radius: 15px;
+        font-size: 15px;
+
+
+    }
+
+    .alert-danger {
+        margin-top: -15%!important;
+      
+        
+    }
+
+}
+
+
+@media (700px <= width <= 900px) {
+
+
+    .full-buttons-container {
+        
+        width: 100%;
+        margin-top: 150px;
+        position: relative;
+        vertical-align:top;
+        justify-content:center;
+        row-gap: 10px;   
+
+    }
+
+    .btn {
+
+        width: 200px;
+        padding: 7px 15px;
+        
+
+    }
+}
+
+
+
+
+
+
+.F-link {
+    top: 80px;
+    position: relative;
+    color: rgb(4, 4, 11)
+}
+
+.F-link a {
+
+    color: rgb(10, 22, 246);
+}
+
+
+a:hover {
+
+    color: rgb(114, 248, 114);
+}
+
+
+
+
+
+
+
+@media (700px <= width <= 900px) {
+
+    .F-link {margin-top: -40px;
+    }
+}
+
+
+
+.alert-success {
+
+    color: rgb(1, 1, 11);
+    background-color: rgb(10, 239, 10);
+    font-size: 19px;
+    color:black;
+    font-weight: bold;
+    width: 640px;
+    height: 43px;
+    padding-top: 5px;
+    top: 110px;
+    position: fixed;
+    left: 25%;
+    animation-name: col;
+    animation-duration: 2s;
+}
+
+
+
+
+@keyframes col {
+
+    from {background-color:  rgb(10, 239, 10); color:red}
+    to {background-color: rgb(238, 12, 12); color: black}
+
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(3deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-3deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+    
+}
+
+
+
+
+.alert-danger {
+
+    top: 170px;
+    background-color: rgb(246, 73, 73);
+    color: rgb(1, 1, 11);
+    height: 44px;
+    width: 95%;
+    padding-top: 5px;
+    font-size: 13px;
+    margin-top: -5%;
+  
+    
+}
+
+
+
+
+
+
+
+.footer {
+
+    border-style: solid;
+    border-color: rgb(227, 230, 230);
+    width: 100%;
+    margin-top: 10%;
+    background-color: rgb(13, 2, 101); 
+    bottom: 0;
+    position: relative;
+}
+
+
+
+.wholink {
+    font-size: 18px;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+.wholink a {
+    color:black;
+}
+
+.wholink a:hover {
+    color: rgb(50, 211, 50);
+}
+
+
+
+
+
+.copyright-site {
+
+    padding-top: 6px;
+    margin-right: 1px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    max-width: 100%;
+
+}
+
+
+.copyright-site a {
+
+    color: grey;
+    margin-right: 3px;
+    padding-top: 18px;
+}
+
+.f-img {
+
+    margin-top: 15px;
+}
+
+
+.footer-div {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 6px;
+    margin-left: 3px;
+    margin-top: 6px;
+}
+
+.links-f {
+
+    width: 50%;
+    height: 100%;
+    margin-top: 7px;
+    margin-left: 6px;
+    line-height: 1.0;
+    text-decoration: none;
+}
+
+.links-f a {
+    text-decoration: none;
+    color: rgb(226, 223, 223);
+}
+
+
+    
+@media (max-width:700px) {
+
+
+    .copyright-site a {
+
+       
+        padding-bottom:1px;
+        
+    
+    }
+
+
+    
+    
+    .footer {
+         bottom: 0;
+         position:fixed;
+
+    }
+
+    .info li {
+
+        font-size: 17px;
+
+
+    }
+
+    .wholink {
+
+        font-size: 16px;
+    }
+
+    .links-f {
+        font-size:12px;
+        margin-top: 2;
+        line-height: .5;
+        margin-left: 8px;
+    }
+
+    .footer-div {
+        width: 90%;}
+
+    .copyright-site a {
+        font-size: 12px;
+    }
+   
+ }
+
+
+ @media (max-width:380px) {
+
+
+    h1 a{
+
+        font-size: 18px;
+        margin-left: -2px!important;
+        
+    }
+
+
+    .info li {
+
+        font-size: 15px;
+
+
+    }
+
+    .wholink {
+
+        font-size: 14px;
+    }
+
+
+    .links-f {
+
+        font-size: 9px;
+    }
+
+    .copyright-site a {
+
+        font-size: 10px;
+        padding-top: 22px;
+    }
+
+    .copyright-site {
+        right: 0;
+    }
+
+    .alert-success {
+
+        font-size: 12px!important;
+        height:43px!important;
+        width: 300px!important;
+        left: 3%!important;
+    }
+
+
+
+
+ }
+
+
+ @media (700px <= width <= 900px) {
+
+    .container {
+        display:grid;
+        row-gap: 20px;
+       
+    }
+
+    .bt-mg { order: -1;}
+
+    .img-sect {
+
+       order: 2;
+       width: 100%;
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       column-gap: 10px;
+      
+    }
+
+    .footer {
+
+        bottom: 0;
+        position: fixed;
+    }
+
+}
+
+
+
+@media (min-width: 1281px) {
+
+    h2 {
+        font-size: 95px!important;
+        margin-top: -1%;
+    }
+
+    .btn {
+
+        width: 372px!important;
+        font-size: 22px;
+        padding: 10px 8px;
+    }
+
+    .footer {
+
+        bottom: 0;
+        position: fixed;
+    }
+
+    .alert-success {
+
+        height: 50px!important;
+        font-size: 27px;
+        top: 160px;
+        left: 30%;
+        width: 840px;
+    }
+
+    .F-link {
+
+        font-size: 21px;
+    }
+
+    .f-img {
+
+        bottom: 0;
+        margin-top: 23px!important;
+    }
+
+
+@keyframes col {
+
+    from {background-color:  rgb(10, 239, 10); color:red}
+    to {background-color: rgb(238, 12, 12); color: black}
+
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(3deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-3deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+    
+}
+
+
+}
+
+
+
+
+
+

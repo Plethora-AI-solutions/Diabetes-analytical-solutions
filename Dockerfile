@@ -13,4 +13,4 @@ RUN pip install --no-cache-dir -r require.txt
 
 COPY . /app
 
-CMD [ "gunicorn", "--bind", "0.0.0.0:8080", "PredictDai.wsgi"]
+CMD ["gunicorn", "--bind", "127.0.0.1:8080", "PredictDai.wsgi"]

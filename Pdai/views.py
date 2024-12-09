@@ -21,6 +21,7 @@ import pandas as pd
 from .models import predict
 from .models import RF_model
 import os 
+from google.cloud import aiplatform
 # from django.contrib.auth.decorators import user_passes_test
 # from django.core.exceptions import PermissionDenied
 
@@ -303,25 +304,25 @@ def SVMPred(request):
             request, "Pdai/rf-results.html", context =context
         )
 
-from google.cloud import aiplatform
+
 #Predict with RF model
 @login_required()
 def Rf(request, id):
     if request.method == "POST":
         
-        # crrent_direct = os.getcwd()
-        # Saved_model = os.path.join(crrent_direct, 'Dai_RfM.pkl')
-        # with open(Saved_model, 'rb') as f:
-        #     RFM = pickle.load(f)
+        crrent_direct = os.getcwd()
+        Saved_model = os.path.join(crrent_direct, 'Dai_RfM.pkl')
+        with open(Saved_model, 'rb') as f:
+            RFM = pickle.load(f)
         
         
-        ENDPOINT_ID="8120350767962914816"
-        PROJECT_ID="724667865468"   
+        # ENDPOINT_ID="8120350767962914816"
+        # PROJECT_ID="724667865468"   
         
         
-        endpoint_name=f"projects/{PROJECT_ID}/locations/europe-west8/endpoints/{ENDPOINT_ID}"
+        # endpoint_name=f"projects/{PROJECT_ID}/locations/europe-west8/endpoints/{ENDPOINT_ID}"
 
-        RFM = aiplatform.Endpoint(endpoint_name=endpoint_name)
+        # RFM = aiplatform.Endpoint(endpoint_name=endpoint_name)
         
         db_new = pd.read_csv("db_new.csv")
 

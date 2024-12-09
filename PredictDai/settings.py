@@ -8,12 +8,11 @@ from dotenv import load_dotenv
 from urllib.parse import urlparse
 
 
-load_dotenv(override=True)
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv(override=True)
 
 EMAIL_USE_TLS = EMAIL_USE_TLS
 EMAIL_HOST = EMAIL_HOST
@@ -32,17 +31,19 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG') == 'False'
 
 
-CLOUDRUN_SERVICE_URL = os.getenv("CLOUDRUN_SERVICE_URL", default=None)
-if CLOUDRUN_SERVICE_URL:
-    ALLOWED_HOSTS = [urlparse(CLOUDRUN_SERVICE_URL).netloc]
-    CSRF_TRUSTED_ORIGINS = [CLOUDRUN_SERVICE_URL]
-    SECURE_SSL_REDIRECT = True
-    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-else:
-    ALLOWED_HOSTS = ["diabetes-diagnoses-system-724667865468.europe-west2.run.app"]
+# CLOUDRUN_SERVICE_URL = os.getenv("CLOUDRUN_SERVICE_URL", default=None)
+# if CLOUDRUN_SERVICE_URL:
+#     ALLOWED_HOSTS = [urlparse(CLOUDRUN_SERVICE_URL).netloc]
+#     CSRF_TRUSTED_ORIGINS = [CLOUDRUN_SERVICE_URL]
+#     SECURE_SSL_REDIRECT = True
+#     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+# else:
+#     ALLOWED_HOSTS = ["diabetes-diagnoses-system-724667865468.europe-west2.run.app"]
+    
+                  
 
 
-#ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -118,7 +119,10 @@ else:
         }
     }
     
-    
+
+
+
+
 
 
 # Password validation
@@ -156,7 +160,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, '/Pdai/static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 

@@ -1,0 +1,41 @@
+@media print {
+
+    body {
+        margin: 0;
+        color: #0c0c0c;
+        background-color: white;
+      }
+
+    .table {
+
+     width: 900px;
+     height: 850px;
+     margin-top: 90px;
+     font-size: 32px;
+
+
+    }
+
+    h2 {
+      margin-top: 30px;
+      background-color: none;
+    }
+
+
+
+    header {
+      margin-top: 20px;
+    }
+
+    .AllButtons, .sitelink, .footer, .copyright, h1 {
+
+      display: none !important;
+      
+    }
+
+    .table th {
+      background-color: rgb(78, 153, 245);
+  }
+    
+}
+
