@@ -13,4 +13,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /app
 
-CMD ["gunicorn", "--bind" ,":$PORT", "--workers 1", "--threads 8","--timeout  0", "main:PredictDai"]
+CMD ["gunicorn", "--bind" ,"0.0.0.0:8000", "PredictDai.wsgi"]
